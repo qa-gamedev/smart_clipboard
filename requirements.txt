@@ -1,0 +1,35 @@
+# Python 3.10 – 3.13, Windows 10 (1803+) / Windows 11, 64-bit
+PyQt6>=6.5
+
+# QR-коды (Pillow не нужен — QR рисуется напрямую)
+qrcode>=7.4
+
+# Перевод (Google через deep-translator; остальные сервисы работают через requests)
+deep-translator>=1.11
+requests>=2.28
+
+# Windows OCR (встроенный в систему движок, ничего не скачивается)
+winrt-runtime
+winrt-Windows.Foundation
+winrt-Windows.Foundation.Collections
+winrt-Windows.Globalization
+winrt-Windows.Graphics.Imaging
+winrt-Windows.Media.Ocr
+winrt-Windows.Storage.Streams
+winrt-Windows.ApplicationModel.DataTransfer   # импорт истории буфера Windows при запуске
+
+# Офлайн-перевод NLLB-200 (рекомендуется: быстро, без блокировок, 200 языков). Модель ≈630 МБ скачивается
+# кнопкой в настройках или командой  python install_model.py
+ctranslate2
+sentencepiece
+
+# ---- необязательно ----
+# Распознавание QR-кодов и штрихкодов на скриншотах (Alt+S)
+zxing-cpp
+numpy
+
+# Запасной офлайн-перевод Argos:  pip install argostranslate   затем   python install_offline.py ko ja
+# Tesseract OCR (лучше читает смесь языков): установщик UB-Mannheim, отметьте нужные языки
+# Языки Windows OCR (корейский, японский, китайский...): install_ocr_languages.ps1 от администратора
+
+# Сборка exe:  build_exe.bat  (ставит pyinstaller сам)
